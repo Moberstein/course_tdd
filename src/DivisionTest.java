@@ -13,7 +13,6 @@ public class DivisionTest {
     @Test
     public void divideZero()
     {
-        new Division("5", "0").divide();
-        fail();
+        assertEquals(new Division("5", "0").divide(), "ERROR: Divide by zero");
     }
 }
