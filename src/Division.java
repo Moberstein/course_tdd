@@ -24,9 +24,17 @@ public class Division {
         throw new NotImplementedException();
     }*/
 
-    public Object divide()
+    public String divide()
     {
-        double result = Double.parseDouble(this.dividend) / Double.parseDouble(this.divisor);
+        double divident = Double.parseDouble(this.dividend);
+        double divisor = Double.parseDouble(this.divisor);
+
+        if(divisor == 0.0)
+        {
+            return "ERROR: Divide by zero";
+        }
+
+        double result = divident / divisor;
         return String.format(String.format("%%.%df", precision), result);
     }
     //-----  -----
