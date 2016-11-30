@@ -1,5 +1,7 @@
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import java.util.Locale;
+
 public class Division {
 
     private String dividend,
@@ -35,7 +37,7 @@ public class Division {
         }
 
         double result = divident / divisor;
-        return String.format(String.format("%%.%df", precision), result);
+        return String.format(Locale.ENGLISH, String.format("%%.%df", precision), result);
     }
     //-----  -----
 
