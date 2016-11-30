@@ -28,6 +28,8 @@ public class Division {
 
     public String divide()
     {
+        if(dividend == null || divisor == null) return "ERROR: NULL Value";
+
         double divident = Double.parseDouble(this.dividend);
         double divisor = Double.parseDouble(this.divisor);
 
