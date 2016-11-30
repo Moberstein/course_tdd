@@ -29,8 +29,12 @@ public class Division {
     public String divide()
     {
         if(dividend == null || divisor == null) return "ERROR: NULL Value";
+        else if(isNullOrWhitespace(dividend) || isNullOrWhitespace(divisor))
+        {
+            return "ERROR: Empty Value";
+        }
 
-        double divident = Double.parseDouble(this.dividend);
+        double dividend = Double.parseDouble(this.dividend);
         double divisor = Double.parseDouble(this.divisor);
 
         if(divisor == 0.0)
@@ -38,8 +42,22 @@ public class Division {
             return "ERROR: Divide by zero";
         }
 
-        double result = divident / divisor;
+        double result = dividend / divisor;
         return String.format(Locale.ENGLISH, String.format("%%.%df", precision), result);
+    }
+
+    public boolean isNullOrWhitespace(String s)
+    {
+        if (s == null) return true;
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (!Character.isWhitespace(s.charAt(i)))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
     //-----  -----
 
