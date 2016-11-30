@@ -24,4 +24,11 @@ public class DivisionTest {
         assertEquals(new Division("1", "3", 2).divide(), "0.33");
         assertEquals(new Division("1", "3", 3).divide(), "0.333");
     }
+
+    @Test
+    public void nullValues()
+    {
+        assertEquals(new Division(null, "3", 3).divide(), "ERROR: NULL Value");
+        assertEquals(new Division("3", null, 3).divide(), "ERROR: NULL Value");
+    }
 }
